@@ -1,4 +1,4 @@
-from query_data import query_rag
+from app.query_data import query_rag
 import os
 from dotenv import load_dotenv
 from groq import Groq
@@ -12,16 +12,16 @@ Actual Response: {actual_response}
 (Answer with 'true' or 'false') Does the actual response match the expected response? 
 """
 
-def test_monopoly_rules():
+def test_getoutofthathole():
     assert query_and_validate(
-        question="How much total money does a player start with in Monopoly? (Answer with the number only)",
-        expected_response="$1500",
+        question="What are the grow zones for Anise Hyssop (Answer with the numbers only)",
+        expected_response="4-8",
     )
 
 def test_ticket_to_ride_rules():
     assert query_and_validate(
-        question="How many points does the longest continuous train get in Ticket to Ride? (Answer with the number only)",
-        expected_response="10 points",
+        question="What is the URL for the Orem Victim Advocates? (Answer with the URL only)",
+        expected_response="https://orem.org/victim-advocates/",
     )
 
 def query_and_validate(question: str, expected_response: str):

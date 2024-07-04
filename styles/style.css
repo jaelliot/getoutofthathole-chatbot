@@ -1,0 +1,49 @@
+body {
+    font-family: 'sans-serif';
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #00573F;
+}
+
+a {
+    color: #00573F;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.stButton > button {
+    background-color: #00573F;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.stButton > button:hover {
+    background-color: #00472C;
+}
+
+.stMarkdown {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.sidebar .sidebar-content {
+    background-color: #F0F0F0;
+    color: #000000;
+}
+
+.sidebar .sidebar-content a {
+    color: #00573F;
+}
+
+.sidebar .sidebar-content a:hover {
+    text-decoration: underline;
+}

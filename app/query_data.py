@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from groq import Groq
 from langchain_community.vectorstores import Chroma
 from langchain.prompts import ChatPromptTemplate
-from get_embedding_function import get_embedding_function
+from app.get_embedding_function import get_embedding_function
 
 load_dotenv()
 
