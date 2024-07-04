@@ -1,8 +1,8 @@
+streamlit                 # Streamlit for web app development
 pypdf                     # PDF handling
 langchain                 # Language model processing and utilities
 chromadb                  # Vector storage for embeddings
 pytest                    # Testing framework
-boto3                     # AWS SDK for Python (for BedrockEmbeddings)
 langchain_community       # Community-supported extensions for LangChain
 cohere                    # Cohere API for embeddings
 python-dotenv             # For environment variable management
