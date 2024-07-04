@@ -36,7 +36,7 @@ a:hover {
 }
 
 .sidebar .sidebar-content {
-    background-color: #F0F0F0;
+    background-color: #E0E0E0;
     color: #000000;
 }
 
@@ -46,4 +46,9 @@ a:hover {
 
 .sidebar .sidebar-content a:hover {
     text-decoration: underline;
+}
+
+.stTextInput > div > input {
+    background-color: #E0E0E0;
+    color: #000000;
 }

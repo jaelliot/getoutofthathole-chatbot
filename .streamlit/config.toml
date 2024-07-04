@@ -1,6 +1,6 @@
 [theme]
 primaryColor = "#265d38"
 backgroundColor = "#FFFFFF"
-secondaryBackgroundColor = "#fefefe"
+secondaryBackgroundColor = "#E0E0E0"  # Darker shade of grey for the sidebar
 textColor = "#000000"
 font = "sans serif"
