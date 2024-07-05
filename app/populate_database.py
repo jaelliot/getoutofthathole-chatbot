@@ -7,6 +7,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.schema.document import Document
 from app.get_embedding_function import get_embedding_function
 from langchain_community.vectorstores import Chroma
+from hash_check import has_content_changed  # Import the content check function
 
 load_dotenv()
 
@@ -24,8 +25,15 @@ def main():
 
     # Create (or update) the data store.
     documents = load_documents()
+    
+    # Check if the content has changed
+    if not has_content_changed(documents):
+        print("✅ No changes in the documents. Database update not required.")
+        return False
+
     chunks = split_documents(documents)
     add_to_chroma(chunks)
+    return True
 
 def load_documents():
     document_loader = PyPDFDirectoryLoader(DATA_PATH)

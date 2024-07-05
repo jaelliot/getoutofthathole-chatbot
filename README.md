@@ -19,13 +19,15 @@ The main changes I intend to make are:
 - Replace the pdf functionality with markdown. That way the file can retain formatting, but be much smaller.
 - I need to optimize the chunk size and overlapping. The size is currently at 800 for chunk size, and 80 for the overlap.
 - Look into a lightweight vector index for efficient searching and retrieval.
-- enable conditional database loading; that way I can save resources avoiding redundant operations.
-- Implement lazy loading to free up resources at startup.
+- ~~enable conditional database loading; that way I can save resources avoiding redundant operations.~~
+- Add a drop down menu for selecting a different LLM model; I want openai, anthropic, cohere, and mistral.
+- Add options to clear and reload the database.
+- ~~Implement lazy loading to free up resources at startup.~~
 - implement result caching to store results.
 - refactor to utilize OOP principles; break the files down into smaller modules which follow OOP principles. 
 - I need to make various bits asynchronous to avoid locking up the app.
 - I need to figure out how to make an efficient data structure.
-- I need to implement lazy loading for the UI Components.
-- I need to implement lru-caching and st.cache_data (follow best practices for caching; utilize cache invalidation, cache size, TTL)
-- Give the caching functions their own files.
+- ~~I need to implement lazy loading for the UI Components.~~
+- ~~I need to implement lru-caching and st.cache_data (follow best practices for caching; utilize cache invalidation, cache size, TTL)~~
+- ~~Give the caching functions their own files.~~
 - integrate robust error handling into the code; for example include permissions checks for anything which interacts with the databases.
