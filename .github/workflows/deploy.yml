@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.9'
+        python-version: '3.10.12'
 
     - name: Cache dependencies
       uses: actions/cache@v2
@@ -33,7 +33,8 @@ jobs:
 
     - name: Run tests
       env:
-        COHERE_API_KEY: ${{ secrets.COHERE_API_KEY }}
+        PYTHONPATH: /app
+        CO_API_KEY: ${{ secrets.COHERE_API_KEY }}
         GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         GROQ_MODEL: ${{ secrets.GROQ_MODEL }}
         WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
@@ -51,7 +52,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.9'
+        python-version: '3.10.12'
 
     - name: Cache dependencies
       uses: actions/cache@v2
@@ -68,7 +69,8 @@ jobs:
 
     - name: Deploy to Railway
       env:
-        COHERE_API_KEY: ${{ secrets.COHERE_API_KEY }}
+        PYTHONPATH: /app
+        CO_API_KEY: ${{ secrets.COHERE_API_KEY }}
         GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         GROQ_MODEL: ${{ secrets.GROQ_MODEL }}
         WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}

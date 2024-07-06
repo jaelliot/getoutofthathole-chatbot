@@ -1,9 +1,9 @@
 import argparse
 import os
 from dotenv import load_dotenv
-from groq import Groq
-from langchain_community.vectorstores import Chroma
-from langchain.prompts import ChatPromptTemplate
+from groq import Groq # type: ignore
+from langchain_community.vectorstores import Chroma # type: ignore
+from langchain.prompts import ChatPromptTemplate # type: ignore
 from app.get_embedding_function import get_embedding_function
 
 load_dotenv()
