@@ -1,3 +1,6 @@
+# chatbot.py
+# the steamlit chatbot interface.
+
 import streamlit as st  # type: ignore
 from cache_utils import cached_populate_database, lru_cached_query, cached_query_rag
 from app.weather_check import run_snow_check

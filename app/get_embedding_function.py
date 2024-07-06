@@ -1,3 +1,6 @@
+# get_embedding_function.py
+
+
 import os
 from dotenv import load_dotenv
 import cohere

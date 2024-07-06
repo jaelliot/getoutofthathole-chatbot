@@ -1,3 +1,6 @@
+# hash_check.py
+
+
 import mmh3
 
 HASH_FILE = "chroma/data_hash.txt"
