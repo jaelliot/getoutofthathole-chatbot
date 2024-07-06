@@ -17,4 +17,4 @@ COPY app/ ./app/
 EXPOSE 80
 
 # Command to run the Streamlit app
-CMD ["streamlit", "run", "app/chatbot.py", "--server.port=80", "--server.enableCORS=false"]
+CMD ["streamlit", "run", "app/chatbot.py", "--server.port=80", "--server.enableCORS=false", "--server.enableXsrfProtection=false"]
