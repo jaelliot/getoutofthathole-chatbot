@@ -1,5 +1,3 @@
-# test_rag.py
-
 from app.query_data import query_rag
 import os
 from dotenv import load_dotenv
@@ -18,16 +16,18 @@ def test_getoutofthathole():
     assert query_and_validate(
         question="What are the grow zones for Anise Hyssop (Answer with the numbers only)",
         expected_response="4-8",
+        context="Anise Hyssop is a perennial plant that grows well in zones 4-8."
     )
 
 def test_ticket_to_ride_rules():
     assert query_and_validate(
         question="What is the URL for the Orem Victim Advocates? (Answer with the URL only)",
         expected_response="https://orem.org/victim-advocates/",
+        context="Orem Victim Advocates provide support for victims of crime. For more information, visit their website at https://orem.org/victim-advocates/."
     )
 
-def query_and_validate(question: str, expected_response: str):
-    response_text = query_rag(question)
+def query_and_validate(question: str, expected_response: str, context: str):
+    response_text = query_rag(question, context)
     prompt = EVAL_PROMPT.format(
         expected_response=expected_response, actual_response=response_text
     )
@@ -38,11 +38,9 @@ def query_and_validate(question: str, expected_response: str):
     print(prompt)
 
     if "true" in evaluation_results_str_cleaned:
-        # Print response in Green if it is correct.
         print("\033[92m" + f"Response: {evaluation_results_str_cleaned}" + "\033[0m")
         return True
     elif "false" in evaluation_results_str_cleaned:
-        # Print response in Red if it is incorrect.
         print("\033[91m" + f"Response: {evaluation_results_str_cleaned}" + "\033[0m")
         return False
     else:

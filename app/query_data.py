@@ -31,15 +31,15 @@ def main():
     query_text = args.query_text
     query_rag(query_text)
 
-def query_rag(query_text: str):
-    # Prepare the DB.
+def query_rag(query_text: str, context: str):
+     # Prepare the DB.
     embedding_function = get_embedding_function()
     db = Chroma(persist_directory=CHROMA_PATH, embedding_function=embedding_function)
 
     # Search the DB.
     results = db.similarity_search_with_score(query_text, k=5)
 
-    context_text = "\n\n---\n\n".join([doc.page_content for doc, _score in results])
+    context_text = context + "\n\n---\n\n" + "\n\n---\n\n".join([doc.page_content for doc, _score in results])
     prompt_template = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
     prompt = prompt_template.format(context=context_text, question=query_text)
 
@@ -49,6 +49,7 @@ def query_rag(query_text: str):
     formatted_response = f"Response: {response_text}\nSources: {sources}"
     print(formatted_response)
     return response_text
+
 
 def invoke_groq_api(prompt: str) -> str:
     client = Groq(api_key=os.getenv("GROQ_API_KEY"))
