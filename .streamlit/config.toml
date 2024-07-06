@@ -4,3 +4,7 @@ backgroundColor = "#FFFFFF"
 secondaryBackgroundColor = "#E0E0E0"  # Darker shade of grey for the sidebar
 textColor = "#000000"
 font = "sans serif"
+
+[server]
+enableCORS = false
+enableXsrfProtection = false

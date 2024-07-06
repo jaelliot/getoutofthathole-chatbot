@@ -13,8 +13,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the application code
 COPY app/ ./app/
 
-# Expose the Streamlit port
-EXPOSE 8501
+# Expose the default HTTP port
+EXPOSE 80
 
 # Command to run the Streamlit app
-CMD ["streamlit", "run", "app/chatbot.py", "--server.port=8501", "--server.enableCORS=false"]
+CMD ["streamlit", "run", "app/chatbot.py", "--server.port=80", "--server.enableCORS=false"]
